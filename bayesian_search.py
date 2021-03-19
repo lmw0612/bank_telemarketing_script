@@ -11,7 +11,7 @@ from skopt import gp_minimize
 def optimize(params, param_names, x, y):
     params = dict(zip(param_names, params)) # Can't tune for multiple model, only for one model.
     model = ensemble.RandomForestClassifier(**params)
-    kf - model_selection.StratifiedKFold(n_splits=5)
+    kf = model_selection.StratifiedKFold(n_splits=5)
     accuracies = []
     for idx in kf.split(X=x, y=y):
         train_idx, test_idx = idx[0], idx[1]
